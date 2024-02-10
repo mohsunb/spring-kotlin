@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import java.util.*
+import java.util.Date
 
 @Entity
 @Table(schema = "test_db", name = "students")

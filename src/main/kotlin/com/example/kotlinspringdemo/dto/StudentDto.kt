@@ -1,7 +1,7 @@
 package com.example.kotlinspringdemo.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
-import java.util.*
+import java.util.Date
 
 data class StudentDto(
     var firstName: String?,
