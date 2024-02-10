@@ -2,13 +2,13 @@ package com.example.kotlinspringdemo.mapper
 
 import com.example.kotlinspringdemo.dto.StudentDto
 import com.example.kotlinspringdemo.entity.Student
+import org.mapstruct.Mapper
+import org.mapstruct.MappingConstants
+import org.mapstruct.ReportingPolicy
 
-class StudentMapper {
-    fun mapDtoToEntity(dto: StudentDto): Student {
-        return Student(null, dto.firstName, dto.lastName, dto.dateOfBirth)
-    }
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, unmappedTargetPolicy = ReportingPolicy.IGNORE)
+abstract class StudentMapper {
+    abstract fun mapEntityToDto(entity: Student): StudentDto
 
-    fun mapEntityToDto(entity: Student): StudentDto {
-        return StudentDto(entity.firstName, entity.lastName, entity.dateOfBirth)
-    }
+    abstract fun mapDtoToEntity(dto: StudentDto): Student
 }

@@ -6,10 +6,11 @@ plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "1.9.22"
     kotlin("plugin.jpa") version "1.9.22"
+    id("org.jetbrains.kotlin.kapt") version "1.9.22"
 }
 
 group = "com.example"
-version = "0.0.1-SNAPSHOT"
+version = "0.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -19,6 +20,10 @@ repositories {
     mavenCentral()
 }
 
+/* Dependency versions */
+val openApiVersion = "2.3.0"
+val mapstructVersion = "1.5.5.Final"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -26,8 +31,13 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.liquibase:liquibase-core")
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openApiVersion")
+    implementation("org.mapstruct:mapstruct:$mapstructVersion")
+
+    kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
+
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
