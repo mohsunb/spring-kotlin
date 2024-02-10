@@ -15,11 +15,14 @@ class GlobalExceptionHandler {
     fun handleNotFoundException(exception: NotFoundException, httpRequest: HttpServletRequest):
             ResponseEntity<ErrorResponse> {
         val httpStatus = HttpStatus.NOT_FOUND
-        return ResponseEntity.status(httpStatus).body(ErrorResponse(
+        return ResponseEntity.status(httpStatus).body(
+            ErrorResponse(
                 LocalDateTime.now(),
                 httpStatus.value().toShort(),
                 httpStatus.reasonPhrase,
                 exception.message,
-                httpRequest.requestURI))
+                httpRequest.requestURI
+            )
+        )
     }
 }

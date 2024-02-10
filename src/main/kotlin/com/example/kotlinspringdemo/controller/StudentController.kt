@@ -1,7 +1,6 @@
 package com.example.kotlinspringdemo.controller
 
 import com.example.kotlinspringdemo.dto.StudentDto
-import com.example.kotlinspringdemo.entity.Student
 import com.example.kotlinspringdemo.service.StudentService
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -25,7 +24,8 @@ class StudentController(val service: StudentService) {
 
     @GetMapping("/{id}")
     @Operation(summary = "Get a student by their ID")
-    fun getStudentById(@PathVariable id: Long): ResponseEntity<StudentDto> = ResponseEntity.ok(service.getStudentById(id))
+    fun getStudentById(@PathVariable id: Long): ResponseEntity<StudentDto> =
+        ResponseEntity.ok(service.getStudentById(id))
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

@@ -13,7 +13,8 @@ class StudentServiceImpl(val repository: StudentRepository, val mapper: StudentM
 
     override fun getStudentById(id: Long): StudentDto {
         return mapper.mapEntityToDto(
-            repository.findById(id).orElse(null) ?: throw NotFoundException("Student with ID '$id' not found"))
+            repository.findById(id).orElse(null) ?: throw NotFoundException("Student with ID '$id' not found")
+        )
     }
 
     override fun addStudent(request: StudentDto) {
