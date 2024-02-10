@@ -24,13 +24,16 @@ class StudentController(val service: StudentService) {
 
     @GetMapping("/{id}")
     @Operation(summary = "Get a student by their ID")
-    fun getStudentById(@PathVariable id: Long): ResponseEntity<StudentDto> =
-        ResponseEntity.ok(service.getStudentById(id))
+    fun getStudentById(
+        @PathVariable id: Long
+    ): ResponseEntity<StudentDto> = ResponseEntity.ok(service.getStudentById(id))
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Add a new student")
-    fun addStudent(@RequestBody request: StudentDto) {
+    fun addStudent(
+        @RequestBody request: StudentDto
+    ) {
         service.addStudent(request)
     }
 }

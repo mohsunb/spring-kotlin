@@ -7,11 +7,12 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 @OpenAPIDefinition(
-    info = Info(
-        title = "Spring Kotlin Demo",
-        description = "A simple Spring Boot demo application written in Kotlin",
-        version = "0.1"
-    )
+    info =
+        Info(
+            title = "Spring Kotlin Demo",
+            description = "A simple Spring Boot demo application written in Kotlin",
+            version = "0.1"
+        )
 )
 class KotlinSpringDemoApplication
 

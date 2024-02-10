@@ -12,8 +12,10 @@ import java.time.LocalDateTime
 @RestControllerAdvice
 class GlobalExceptionHandler {
     @ExceptionHandler(NotFoundException::class)
-    fun handleNotFoundException(exception: NotFoundException, httpRequest: HttpServletRequest):
-            ResponseEntity<ErrorResponse> {
+    fun handleNotFoundException(
+        exception: NotFoundException,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ErrorResponse> {
         val httpStatus = HttpStatus.NOT_FOUND
         return ResponseEntity.status(httpStatus).body(
             ErrorResponse(
