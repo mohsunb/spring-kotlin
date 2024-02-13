@@ -55,10 +55,15 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
 sonarqube {
     properties {
         property("sonar.scm.forceReloadAll", true)
         property("sonar.gradle.skipCompile", true)
-        property("sonar.java.coveragePlugin", "jacoco")
     }
 }
