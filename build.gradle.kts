@@ -8,6 +8,8 @@ plugins {
     kotlin("plugin.jpa") version "1.9.22"
     id("org.jetbrains.kotlin.kapt") version "1.9.22"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
+    id("jacoco")
+    id("org.sonarqube") version "4.4.1.3373"
 }
 
 group = "com.example"
@@ -51,4 +53,11 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property("sonar.scm.forceReloadAll", true)
+        property("sonar.gradle.skipCompile", true)
+    }
 }
