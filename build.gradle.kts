@@ -26,6 +26,7 @@ repositories {
 /* Dependency versions */
 val openApiVersion = "2.3.0"
 val mapstructVersion = "1.5.5.Final"
+val logbackEncoderVersion = "7.4"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -36,6 +37,7 @@ dependencies {
     implementation("org.liquibase:liquibase-core")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openApiVersion")
     implementation("org.mapstruct:mapstruct:$mapstructVersion")
+    implementation("net.logstash.logback:logstash-logback-encoder:$logbackEncoderVersion")
 
     kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
