@@ -8,4 +8,6 @@ data class StudentDto(
     var lastName: String?,
     @JsonFormat(pattern = "yyyy-MM-dd")
     var dateOfBirth: Date?
-)
+) {
+    constructor() : this(null, null, null)
+}

@@ -16,4 +16,6 @@ data class Student(
     var firstName: String?,
     var lastName: String?,
     var dateOfBirth: Date?
-)
+) {
+    constructor() : this(null, null, null, null)
+}

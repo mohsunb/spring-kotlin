@@ -59,5 +59,6 @@ sonarqube {
     properties {
         property("sonar.scm.forceReloadAll", true)
         property("sonar.gradle.skipCompile", true)
+        property("sonar.java.coveragePlugin", "jacoco")
     }
 }
