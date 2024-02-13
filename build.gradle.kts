@@ -65,5 +65,15 @@ sonarqube {
     properties {
         property("sonar.scm.forceReloadAll", true)
         property("sonar.gradle.skipCompile", true)
+        property(
+            "sonar.coverage.exclusions", "**/com/example/kotlinspringdemo/*," +
+                    "**/com/example/kotlinspringdemo/controller/*," +
+                    "**/com/example/kotlinspringdemo/dto/**," +
+                    "**/com/example/kotlinspringdemo/entity/*," +
+                    "**/com/example/kotlinspringdemo/exception/*," +
+                    "**/com/example/kotlinspringdemo/handler/*," +
+                    "**/com/example/kotlinspringdemo/mapper/**," +
+                    "**/com/example/kotlinspringdemo/repository/*"
+        )
     }
 }
